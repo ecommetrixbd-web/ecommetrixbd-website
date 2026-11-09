@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Showreel from '../../components/Showreel.astro';
+import WorkGrid from '../../components/WorkGrid.astro';
+import Cta from '../../components/Cta.astro';
+---
+<Base title="Our Work | Ecommetrix" description="Ad creatives, videos, tracking projects and case studies by Ecommetrix.">
+  <PageHeader eyebrow="Our work" title="Ads, videos and tracking we have built for clients." lead="Open any project for the details: what the client needed, what we did and what changed." />
+  <WorkGrid showHead={false} />
+  <Showreel full />
+  <Cta />
+</Base>

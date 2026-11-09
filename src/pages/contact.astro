@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+import { site } from '../data/site';
+---
+<Base title="Contact | Ecommetrix" description={`Contact Ecommetrix in ${site.addressShort}. Call, WhatsApp or email us.`}>
+  <PageHeader eyebrow="Contact" title="Let's talk about your business." lead="Call, WhatsApp, email or fill in the form below. We usually reply within one working day." />
+  <section class="section" style="padding-bottom:var(--s5)">
+    <div class="wrap">
+      <div class="contact-cards">
+        <div class="contact-card"><h2>Phone &amp; WhatsApp</h2><a href={`tel:+${site.phoneRaw}`}>{site.phone}</a><a class="link" href={`https://wa.me/${site.phoneRaw}`} target="_blank" rel="noopener">Message on WhatsApp <span class="arr">→</span></a></div>
+        <div class="contact-card"><h2>Email</h2><a href={`mailto:${site.email}`}>{site.email}</a></div>
+        <div class="contact-card"><h2>Office</h2><p>{site.address}</p></div>
+      </div>
+      <div class="map">
+        <iframe title="Ecommetrix office on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src={`https://www.google.com/maps?q=${encodeURIComponent(site.mapQuery)}&output=embed`}></iframe>
+      </div>
+    </div>
+  </section>
+  <Cta />
+  <Faq />
+</Base>

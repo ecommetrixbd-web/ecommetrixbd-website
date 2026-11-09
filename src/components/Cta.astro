@@ -1,0 +1,62 @@
+---
+import { site } from '../data/site';
+---
+<section class="cta" id="contact-form" aria-labelledby="cta-title">
+  <svg class="orbit" viewBox="0 0 620 620" aria-hidden="true"><circle cx="310" cy="310" r="300"/><circle class="o2" cx="310" cy="310" r="220" stroke-dasharray="2 9"/><circle cx="310" cy="310" r="140"/></svg>
+  <div class="wrap cta-grid">
+    <div>
+      <span class="eyebrow" style="color:#E2C99A">Start a project</span>
+      <h2 id="cta-title" style="margin-top:var(--s3)">Tell us what you want to grow.</h2>
+      <p>Fill in the form or message us on WhatsApp. We usually reply within one working day.</p>
+      <ul class="cta-points">
+        <li>Four short fields, no long forms</li>
+        <li>A real person from our team calls you back</li>
+        <li>Prefer WhatsApp? <span class="sel">{site.phone}</span></li>
+      </ul>
+    </div>
+    <form class="lead-form" id="leadForm" novalidate aria-labelledby="form-title" data-key={site.web3formsKey}>
+      <h3 id="form-title">Tell us about your project</h3>
+      <div class="field">
+        <label for="lf-name">Full name</label>
+        <input id="lf-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+        <span class="err" id="lf-name-err" aria-live="polite"></span>
+      </div>
+      <div class="field">
+        <label for="lf-email">Email</label>
+        <input id="lf-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+        <span class="err" id="lf-email-err" aria-live="polite"></span>
+      </div>
+      <div class="field">
+        <label for="lf-phone">Phone / WhatsApp</label>
+        <input id="lf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="01XXXXXXXXX" required>
+        <span class="err" id="lf-phone-err" aria-live="polite"></span>
+      </div>
+      <div class="field">
+        <label for="lf-service">Service you need</label>
+        <select id="lf-service" name="service" required>
+          <option value="">Select a service</option>
+          <option>Meta Ads</option>
+          <option>Google Ads</option>
+          <option>TikTok Ads</option>
+          <option>Video &amp; Creative Production</option>
+          <option>Website Design &amp; Development</option>
+          <option>Graphics Design</option>
+          <option>Email Marketing</option>
+          <option>Content Support</option>
+          <option>Server-Side Tracking</option>
+          <option>Full 360° growth support</option>
+          <option>Not sure yet</option>
+        </select>
+        <span class="err" id="lf-service-err" aria-live="polite"></span>
+      </div>
+      <input type="text" name="company_website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-primary lf-submit" type="submit">Send my request <span class="arr">↗</span></button>
+      <p class="lf-note">We only use your details to reply to this request.</p>
+      <div class="lf-success" id="lfSuccess" hidden role="status">
+        <span class="tick" aria-hidden="true">✓</span>
+        <h3>Thanks, <span id="lfName">we got it</span>.</h3>
+        <p>Our team will contact you soon to talk about your goals.</p>
+      </div>
+    </form>
+  </div>
+</section>

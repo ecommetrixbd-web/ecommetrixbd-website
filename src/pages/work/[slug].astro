@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Cta from '../../components/Cta.astro';
+import { work, workTabs } from '../../data/work';
+
+export function getStaticPaths() {
+  return work.map((w) => ({ params: { slug: w.slug }, props: { item: w } }));
+}
+const { item } = Astro.props;
+const cat = workTabs.find((t) => t.id === item.category)?.label;
+const more = work.filter((w) => w.category === item.category && w.slug !== item.slug).slice(0, 3);
+---
+<Base title={`${item.title} | Ecommetrix`} description={item.summary}>
+  <PageHeader eyebrow={cat} title={item.title} lead={item.summary}>
+    <a class="back-link" href="/work">← Back to all work</a>
+  </PageHeader>
+  <section class="section">
+    <div class="wrap detail-grid">
+      <div class="detail-body">
+        <div class="detail-media">
+          {item.image ? <img src={item.image} alt={item.title} /> : <span class="ph">Add project image or video</span>}
+        </div>
+        {item.placeholder && <p style="margin-top:var(--s3)"><span class="ph">Sample text, replace with the real project</span></p>}
+        <h2>The challenge</h2>
+        <p>{item.challenge}</p>
+        <h2>What we did</h2>
+        <ul>{item.approach.map((a) => <li>{a}</li>)}</ul>
+        <h2>Results</h2>
+        <ul>{item.results.map((r) => <li>{r}</li>)}</ul>
+      </div>
+      <aside class="detail-side" aria-label="Project details">
+        <dl>
+          <dt>Client</dt><dd>{item.client}</dd>
+        </dl>
+        <dl>
+          <dt>Type</dt><dd>{cat}</dd>
+        </dl>
+        <div class="stack wcard" style="border:0;padding:0;background:none"><div class="stack">{item.tags.map((t) => <span>{t}</span>)}</div></div>
+        <a class="btn btn-primary" href="/contact">Start a similar project <span class="arr">↗</span></a>
+      </aside>
+    </div>
+    {more.length > 0 && (
+      <div class="wrap" style="margin-top:var(--s6)">
+        <h2 class="h2" style="font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:var(--s3)">More {cat?.toLowerCase()}</h2>
+        <div class="cards3">
+          {more.map((w) => (
+            <article class="wcard wlink">
+              <div class="stack">{w.tags.map((t) => <span>{t}</span>)}</div>
+              <h3>{w.title}</h3>
+              <p>{w.summary}</p>
+              <a class="link" href={`/work/${w.slug}`}>Details <span class="arr">→</span><span class="sr">: {w.title}</span></a>
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+  <Cta />
+</Base>

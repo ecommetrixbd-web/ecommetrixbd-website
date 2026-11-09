@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import PostCard from '../../components/PostCard.astro';
+import AuditBox from '../../components/AuditBox.astro';
+import { getPosts, categories } from '../../data/blog';
+const posts = await getPosts();
+const used = categories.filter((c) => posts.some((p) => p.data.category === c));
+---
+<Base title="Blog | Ecommetrix" description="Tips on Meta ads, tracking, video and content for businesses in Bangladesh, from the Ecommetrix team.">
+  <PageHeader eyebrow="Blog" title="Tips on ads, tracking and content." lead="Short, practical posts based on the work we do for our clients every day." />
+  <section class="section">
+    <div class="wrap">
+      <div class="tabs blog-filter" role="group" aria-label="Filter posts by category">
+        <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+        {used.map((c) => <button class="tab" type="button" data-filter={c} aria-pressed="false">{c}</button>)}
+      </div>
+      {posts.length
+        ? <div class="post-grid" id="postGrid">{posts.map((p) => <PostCard post={p} />)}</div>
+        : <p class="lead">No posts yet.</p>}
+      <p class="lead" id="noPosts" hidden>No posts in this category yet.</p>
+      <div style="margin-top:var(--s6)"><AuditBox /></div>
+    </div>
+  </section>
+  <script is:inline>
+    (function(){
+      var btns=[].slice.call(document.querySelectorAll('[data-filter]')),cards=[].slice.call(document.querySelectorAll('#postGrid .post-card')),none=document.getElementById('noPosts');
+      btns.forEach(function(b){b.addEventListener('click',function(){
+        var f=b.getAttribute('data-filter'),n=0;
+        btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+        cards.forEach(function(c){var on=f==='all'||c.getAttribute('data-cat')===f;c.hidden=!on;if(on)n++});
+        none.hidden=n>0;
+      })});
+    })();
+  </script>
+</Base>

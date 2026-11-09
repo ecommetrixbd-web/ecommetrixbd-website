@@ -1,0 +1,14 @@
+---
+import { formatDate, readMinutes } from '../data/blog';
+const { post } = Astro.props;
+const d = post.data;
+---
+<article class="post-card" data-cat={d.category}>
+  <a class="pc-thumb" href={`/blog/${post.id}`} tabindex="-1" aria-hidden="true">
+    {d.cover ? <img src={d.cover} alt="" loading="lazy" decoding="async" /> : <span class="pc-ph">{d.category}</span>}
+  </a>
+  <div class="pc-meta"><span class="pc-cat">{d.category}</span><span>{formatDate(d.date)} · {readMinutes(post.body)} min read</span></div>
+  <h3><a href={`/blog/${post.id}`}>{d.title}</a></h3>
+  <p>{d.description}</p>
+  <a class="link" href={`/blog/${post.id}`}>Read more <span class="arr">→</span><span class="sr">: {d.title}</span></a>
+</article>

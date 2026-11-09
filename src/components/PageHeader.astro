@@ -1,0 +1,11 @@
+---
+const { eyebrow, title, lead } = Astro.props;
+---
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <span class="eyebrow fade-in" style="--d:.05s">{eyebrow}</span>
+    <h1 id="page-title" class="fade-in" style="--d:.15s">{title}</h1>
+    {lead && <p class="lead fade-in" style="--d:.3s">{lead}</p>}
+    <slot />
+  </div>
+</section>
