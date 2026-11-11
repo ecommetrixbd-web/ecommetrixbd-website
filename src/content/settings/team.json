@@ -2,63 +2,43 @@
   "members": [
     {
       "name": "Ahmed Russell",
-      "role": "Founder & CEO",
-      "photo": "",
-      "linkedin": ""
+      "role": "Founder & CEO"
     },
     {
       "name": "Nahid Hasan",
-      "role": "Co-Founder & Creative Director",
-      "photo": "",
-      "linkedin": ""
+      "role": "Co-Founder & Creative Director"
     },
     {
       "name": "Rijwan Ahmed",
-      "role": "Project Manager",
-      "photo": "",
-      "linkedin": ""
+      "role": "Project Manager"
     },
     {
       "name": "Abu Bakar Siddique",
-      "role": "Digital Marketing Executive",
-      "photo": "",
-      "linkedin": ""
+      "role": "Digital Marketing Executive"
     },
     {
-      "name": "Saba Tassum",
-      "role": "Assistant Digital Marketing Executive",
-      "photo": "",
-      "linkedin": ""
+      "name": "Saba Tabassum",
+      "role": "Assistant Digital Marketing Executive"
     },
     {
       "name": "Muhammad Rifat Islam",
-      "role": "Software Engineer",
-      "photo": "",
-      "linkedin": ""
+      "role": "Software Engineer"
     },
     {
       "name": "Rahidul Islam",
-      "role": "Sales Executive",
-      "photo": "",
-      "linkedin": ""
+      "role": "Sales Executive"
     },
     {
       "name": "Rajib",
-      "role": "Senior Video Editor",
-      "photo": "",
-      "linkedin": ""
+      "role": "Senior Video Editor"
     },
     {
       "name": "Shishir Roy",
-      "role": "Senior Video Editor",
-      "photo": "",
-      "linkedin": ""
+      "role": "Senior Video Editor"
     },
     {
       "name": "Nahar",
-      "role": "Graphics Designer",
-      "photo": "",
-      "linkedin": ""
+      "role": "Graphics Designer"
     }
   ]
 }
