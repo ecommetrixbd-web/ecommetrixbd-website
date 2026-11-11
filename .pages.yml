@@ -1,0 +1,275 @@
+# Pages CMS dashboard — https://app.pagescms.org
+# Each "content" entry below is one section in the dashboard sidebar.
+
+media:
+  - name: images
+    label: Images
+    input: public/images
+    output: /images
+    categories: [ image ]
+  - name: videos
+    label: Videos
+    input: public/videos
+    output: /videos
+    extensions: [ mp4, webm, mov ]
+
+content:
+  # ---------------------------------------------------------------- Site Settings
+  - name: site
+    label: Site Settings
+    type: file
+    path: src/content/settings/site.json
+    format: json
+    fields:
+      - { name: name, label: Company name, type: string, required: true }
+      - { name: tagline, label: Tagline (footer), type: string }
+      - { name: description, label: Google description, type: text, description: "1–2 lines shown in Google search results." }
+      - { name: phone, label: Phone (as shown), type: string }
+      - { name: whatsapp, label: WhatsApp number, type: string, description: "Country code + number, digits only. Example: 8801531753599" }
+      - { name: email, label: Email, type: string }
+      - { name: address, label: Full address, type: text }
+      - { name: address_short, label: Short address, type: string, description: "Example: Aftabnagar, Dhaka" }
+      - { name: footer_text, label: Footer text, type: text }
+      - { name: web3forms_key, label: Contact form key (Web3Forms), type: string, description: "Free key from web3forms.com. Form messages are emailed to you." }
+      - name: socials
+        label: Social links
+        type: object
+        description: "Leave a box empty to hide that icon in the footer."
+        fields:
+          - { name: facebook, label: Facebook URL, type: string }
+          - { name: instagram, label: Instagram URL, type: string }
+          - { name: youtube, label: YouTube URL, type: string }
+          - { name: tiktok, label: TikTok URL, type: string }
+          - { name: x, label: X (Twitter) URL, type: string }
+          - { name: linkedin, label: LinkedIn URL, type: string }
+      - name: colors
+        label: Theme colors
+        type: object
+        description: "Hex colors like #5C1423. Changing these recolors the whole site."
+        fields:
+          - { name: dark, label: Dark background (Noir), type: string, pattern: { regex: "^#[0-9A-Fa-f]{6}$", message: "Use a hex color like #16090C" } }
+          - { name: primary, label: Primary brand (Oxblood), type: string, pattern: { regex: "^#[0-9A-Fa-f]{6}$", message: "Use a hex color like #5C1423" } }
+          - { name: accent, label: Accent (Antique Gold), type: string, pattern: { regex: "^#[0-9A-Fa-f]{6}$", message: "Use a hex color like #B8955A" } }
+          - { name: light, label: Light background (Ivory), type: string, pattern: { regex: "^#[0-9A-Fa-f]{6}$", message: "Use a hex color like #F5F0E8" } }
+      - { name: domain, label: Domain, type: string, hidden: true }
+
+  # ---------------------------------------------------------------- Homepage
+  - name: home
+    label: Homepage
+    type: file
+    path: src/content/settings/home.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small line above headline, type: string }
+      - { name: headline_line_1, label: Headline line 1, type: string }
+      - { name: headline_line_2, label: Headline line 2, type: string }
+      - { name: headline_line_3, label: Headline line 3, type: string }
+      - { name: intro, label: Intro text, type: text }
+      - { name: button_1_text, label: Main button text, type: string }
+      - { name: button_1_link, label: Main button link, type: string }
+      - { name: button_2_text, label: Second button text, type: string }
+      - { name: button_2_link, label: Second button link, type: string }
+      - { name: rotator_words, label: '"We do ..." rotating words', type: string, list: true }
+      - { name: hero_strip, label: Text under the hero, type: string }
+      - name: slides
+        label: Hero carousel slides
+        type: object
+        list: true
+        description: "The logo is always the first slide. Drag to reorder."
+        fields:
+          - { name: name, label: Slide title, type: string, required: true }
+          - { name: image, label: Image (square works best), type: image, options: { media: images } }
+      - name: stats
+        label: Stats numbers
+        type: object
+        list: true
+        fields:
+          - { name: value, label: Number, type: string, description: "Example: 120+ or ৳2Cr+. Leave empty to show a placeholder." }
+          - { name: label, label: Label, type: string }
+      - name: client_logos
+        label: Client logos
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Client name, type: string, required: true }
+          - { name: image, label: Logo, type: image, options: { media: images } }
+      - name: testimonial
+        label: Testimonial
+        type: object
+        fields:
+          - { name: quote, label: Quote, type: text }
+          - { name: name, label: Client name, type: string }
+          - { name: role, label: Position and company, type: string }
+
+  # ---------------------------------------------------------------- Services
+  - name: services
+    label: Services
+    type: file
+    path: src/content/settings/services.json
+    format: json
+    fields:
+      - { name: creative_video, label: Video for the "Video & Creative" card, type: file, options: { media: videos }, description: "MP4, 5–10 seconds, under 3 MB. Plays muted on loop." }
+      - { name: creative_video_poster, label: Video cover image (optional), type: image, options: { media: images } }
+      - name: items
+        label: Services
+        type: object
+        list: true
+        description: "Drag to change the order."
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: label, label: Small label, type: string, description: "Example: 01 / Performance" }
+          - { name: text, label: Short text, type: text }
+          - { name: bullets, label: Bullet points, type: string, list: true }
+          - { name: link_text, label: Link text, type: string }
+          - { name: link_url, label: Link URL, type: string }
+          - name: size
+            label: Card size
+            type: select
+            options:
+              values:
+                - { value: normal, label: Normal (1/3 width) }
+                - { value: wide, label: Wide (1/2 width) }
+                - { value: full, label: Full width }
+          - name: art
+            label: Illustration
+            type: select
+            options:
+              values:
+                - { value: meta-ads, label: Meta Ads }
+                - { value: google-ads, label: Google Ads }
+                - { value: tiktok-ads, label: TikTok Ads }
+                - { value: video, label: Video (plays the video above) }
+                - { value: website, label: Website }
+                - { value: graphics, label: Graphics }
+                - { value: email, label: Email }
+                - { value: content, label: Content calendar }
+                - { value: tracking, label: Tracking diagram }
+                - { value: none, label: Plain }
+
+  # ---------------------------------------------------------------- Video Portfolio
+  - name: videos
+    label: Video Portfolio
+    type: file
+    path: src/content/settings/videos.json
+    format: json
+    fields:
+      - name: showreel
+        label: Featured showreel
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: video_url, label: YouTube or Vimeo link, type: string }
+          - { name: video_file, label: Or upload MP4, type: file, options: { media: videos } }
+          - { name: thumbnail, label: Cover image, type: image, options: { media: images }, description: "Optional for YouTube links (the YouTube thumbnail is used)." }
+      - name: items
+        label: Videos
+        type: object
+        list: true
+        description: "Drag to reorder. On phones the homepage shows the first 3."
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: category, label: Category, type: string, description: "Example: Brand video, OVC, Reel" }
+          - name: format
+            label: Shape
+            type: select
+            options:
+              values:
+                - { value: wide, label: Wide 16:9 }
+                - { value: tall, label: Tall 9:16 (Reels/TikTok) }
+                - { value: square, label: Portrait 4:5 }
+          - { name: video_url, label: YouTube or Vimeo link, type: string }
+          - { name: video_file, label: Or upload MP4, type: file, options: { media: videos } }
+          - { name: thumbnail, label: Thumbnail, type: image, options: { media: images } }
+          - { name: on_homepage, label: Show on homepage, type: boolean, default: true }
+
+  # ---------------------------------------------------------------- Our Work
+  - name: work
+    label: Our Work
+    type: collection
+    path: src/content/work
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: title
+      fields: [ title, category, order ]
+      sort: [ order, title ]
+    fields:
+      - { name: title, label: Project title, type: string, required: true }
+      - name: category
+        label: Tab
+        type: select
+        required: true
+        options:
+          values:
+            - { value: ads, label: Ad Creatives }
+            - { value: tracking, label: Tracking Projects }
+            - { value: cases, label: Case Studies }
+      - { name: order, label: Order (1 = first), type: number, default: 99 }
+      - { name: client, label: Client, type: string }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: summary, label: One-line summary (shown on cards), type: text }
+      - { name: image, label: Image, type: image, options: { media: images } }
+      - { name: challenge, label: The challenge, type: text }
+      - { name: approach, label: What we did (one step per line), type: string, list: true }
+      - { name: results, label: Results (one per line), type: string, list: true }
+      - { name: sample, label: Sample text (shows a "replace me" badge), type: boolean, default: false }
+
+  # ---------------------------------------------------------------- Team
+  - name: team
+    label: Team
+    type: file
+    path: src/content/settings/team.json
+    format: json
+    fields:
+      - name: members
+        label: Team members
+        type: object
+        list: true
+        description: "Drag to change the order."
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - { name: role, label: Role, type: string }
+          - { name: photo, label: Photo (portrait 4:5), type: image, options: { media: images } }
+          - { name: linkedin, label: LinkedIn URL, type: string }
+
+  # ---------------------------------------------------------------- Blog
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [ title, category, date, draft ]
+      sort: [ date ]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Short description, type: text, required: true, description: "1–2 lines. Shown on cards and in Google." }
+      - { name: date, label: Date, type: date, required: true }
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values: [ Meta Ads, Tracking, Content, Case Studies, Tips ]
+      - { name: author, label: Author, type: string, default: Ecommetrix Team }
+      - { name: cover, label: Cover image, type: image, options: { media: images } }
+      - { name: draft, label: Draft (hide from site), type: boolean, default: false }
+      - { name: body, label: Post, type: rich-text }
+
+  # ---------------------------------------------------------------- FAQ
+  - name: faq
+    label: FAQ
+    type: file
+    path: src/content/settings/faq.json
+    format: json
+    fields:
+      - name: items
+        label: Questions
+        type: object
+        list: true
+        description: "Drag to reorder."
+        fields:
+          - { name: question, label: Question, type: string, required: true }
+          - { name: answer, label: Answer, type: text, required: true }

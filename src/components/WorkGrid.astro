@@ -1,7 +1,8 @@
 ---
-import { work, workTabs } from '../data/work';
+import { getWork, workTabs } from '../data/work';
 import TrackIntro from './TrackIntro.astro';
 const { limit = 0, showHead = true } = Astro.props;
+const work = await getWork();
 ---
 <section class="section" id="work" aria-labelledby="work-title">
   <div class="wrap">
@@ -25,6 +26,7 @@ const { limit = 0, showHead = true } = Astro.props;
       return (
         <div class="panel" role="tabpanel" id={`p-${t.id}`} aria-labelledby={`tab-${t.id}`} hidden={i !== 0}>
           {t.id === 'tracking' && <TrackIntro />}
+          {shown.length === 0 && <p class="lead">Projects coming soon.</p>}
           <div class="cards3">
             {shown.map((w) => (
               <article class="wcard wlink">

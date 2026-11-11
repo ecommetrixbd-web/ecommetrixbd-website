@@ -1,0 +1,64 @@
+{
+  "showreel": {
+    "title": "Ecommetrix Showreel 2026",
+    "video_url": "",
+    "video_file": "",
+    "thumbnail": ""
+  },
+  "items": [
+    {
+      "title": "Brand film",
+      "category": "Brand video",
+      "format": "wide",
+      "video_url": "",
+      "video_file": "",
+      "thumbnail": "",
+      "on_homepage": true
+    },
+    {
+      "title": "Short-form ad",
+      "category": "9:16",
+      "format": "tall",
+      "video_url": "",
+      "video_file": "",
+      "thumbnail": "",
+      "on_homepage": true
+    },
+    {
+      "title": "Product video",
+      "category": "Product",
+      "format": "square",
+      "video_url": "",
+      "video_file": "",
+      "thumbnail": "",
+      "on_homepage": true
+    },
+    {
+      "title": "Reel creative",
+      "category": "9:16",
+      "format": "tall",
+      "video_url": "",
+      "video_file": "",
+      "thumbnail": "",
+      "on_homepage": true
+    },
+    {
+      "title": "Commercial (OVC)",
+      "category": "Commercial",
+      "format": "wide",
+      "video_url": "",
+      "video_file": "",
+      "thumbnail": "",
+      "on_homepage": true
+    },
+    {
+      "title": "Promotional video",
+      "category": "Promo",
+      "format": "square",
+      "video_url": "",
+      "video_file": "",
+      "thumbnail": "",
+      "on_homepage": true
+    }
+  ]
+}

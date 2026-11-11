@@ -1,0 +1,85 @@
+{
+  "eyebrow": "Performance marketing agency · Dhaka",
+  "headline_line_1": "We run your ads,",
+  "headline_line_2": "make your videos",
+  "headline_line_3": "and track every sale.",
+  "intro": "We plan your campaigns, shoot the content, build the pages and set up the tracking. So you can see which taka brought back a sale and which one didn't.",
+  "button_1_text": "Get a free audit",
+  "button_1_link": "/contact",
+  "button_2_text": "See our work",
+  "button_2_link": "/work",
+  "rotator_words": [
+    "Meta Ads",
+    "Google Ads",
+    "TikTok Ads",
+    "Video Production",
+    "Website Design",
+    "Graphics Design",
+    "Email Marketing",
+    "Content Support",
+    "Server-Side Tracking"
+  ],
+  "hero_strip": "Ads · Video · Websites · Tracking",
+  "slides": [
+    {
+      "name": "Meta Ads",
+      "image": ""
+    },
+    {
+      "name": "Google Ads",
+      "image": ""
+    },
+    {
+      "name": "TikTok Ads",
+      "image": ""
+    },
+    {
+      "name": "Video & Creative Production",
+      "image": ""
+    },
+    {
+      "name": "Website Design & Development",
+      "image": ""
+    },
+    {
+      "name": "Graphics Design",
+      "image": ""
+    },
+    {
+      "name": "Email Marketing",
+      "image": ""
+    },
+    {
+      "name": "Content Support",
+      "image": ""
+    },
+    {
+      "name": "Server-Side Tracking",
+      "image": ""
+    }
+  ],
+  "stats": [
+    {
+      "value": "",
+      "label": "Years in business"
+    },
+    {
+      "value": "",
+      "label": "Ad spend managed"
+    },
+    {
+      "value": "",
+      "label": "Content pieces produced"
+    },
+    {
+      "value": "",
+      "label": "Brands served"
+    }
+  ],
+  "client_logos": [],
+  "testimonial": {
+    "quote": "",
+    "name": "",
+    "role": ""
+  }
+}

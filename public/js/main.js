@@ -24,7 +24,8 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!mm.hidden){setMenu(false);burger.focus()}});
 
   /* Hero rotator */
-  var rot=document.getElementById('rot'),words=['Meta Ads','Google Ads','TikTok Ads','Video Production','Website Design','Graphics Design','Email Marketing','Content Support','Server-Side Tracking'],wi=0;
+  var rot=document.getElementById('rot'),words=[],wi=0;try{words=JSON.parse(rot.getAttribute('data-words'))||[]}catch(e){}
+  if(words.length<2)rot=null;
   if(!reduce&&rot){setInterval(function(){if(document.hidden)return;wi=(wi+1)%words.length;rot.textContent=words[wi];rot.classList.remove('swap');void rot.offsetWidth;rot.classList.add('swap')},2400)}
 
   /* Marquee: duplicate track for seamless loop */
@@ -55,6 +56,7 @@
   var tabs=[].slice.call(document.querySelectorAll('.tab'));
   function selectTab(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',String(on));x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});if(focus)t.focus()}
   tabs.forEach(function(t,i){t.addEventListener('click',function(){selectTab(t)});t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];if(e.key==='Home')n=tabs[0];if(e.key==='End')n=tabs[tabs.length-1];if(n){e.preventDefault();selectTab(n,true)}})});
+  var qt=new URLSearchParams(location.search).get('tab');if(qt){var qtab=document.getElementById('tab-'+qt);if(qtab)selectTab(qtab)}
   [].slice.call(document.querySelectorAll('[data-tab]')).forEach(function(a){a.addEventListener('click',function(){var t=document.getElementById('tab-'+a.getAttribute('data-tab'));if(t)selectTab(t)})});
 
   /* FAQ accordion */

@@ -1,23 +1,23 @@
+---
+import { home, faq } from '../data/site';
+const t = home.testimonial ?? { quote: '', name: '', role: '' };
+---
 <section class="section tf" id="faq" aria-labelledby="faq-title">
   <div class="wrap tf-grid">
     <div>
       <span class="eyebrow">Client perspectives</span>
       <figure class="quote" style="margin-inline:0">
-        <blockquote>Approved client testimonial will appear here, in the client's own words.</blockquote>
-        <figcaption class="who"><b>Client name</b><span>Position, Company</span><span class="ph">Genuine testimonial pending</span></figcaption>
+        <blockquote>{t.quote || "Approved client testimonial will appear here, in the client's own words."}</blockquote>
+        <figcaption class="who"><b>{t.name || 'Client name'}</b><span>{t.role || 'Position, Company'}</span>{!t.quote && <span class="ph">Genuine testimonial pending</span>}</figcaption>
       </figure>
     </div>
     <div>
       <span class="eyebrow">FAQ</span>
       <h2 class="h2" id="faq-title" style="margin:var(--s3) 0 var(--s3);font-size:clamp(1.8rem,3vw,2.6rem)">Common questions</h2>
       <div class="faq">
-        <div class="faq-item"><button class="faq-q" aria-expanded="false" id="fq1" aria-controls="fa1">What services does Ecommetrix provide?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="fa1" role="region" aria-labelledby="fq1"><div><p>Google Ads, Meta Ads, TikTok Ads, video and creative production, website design and development, graphics design, email marketing, content support, and server-side and conversion tracking.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false" id="fq2" aria-controls="fa2">Do you work with international businesses?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="fa2" role="region" aria-labelledby="fq2"><div><p>Yes. We are based in Dhaka and work with businesses in Bangladesh and abroad.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false" id="fq3" aria-controls="fa3">Can we hire individual services?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="fa3" role="region" aria-labelledby="fq3"><div><p>Yes. You can start with one service, such as Meta Ads or tracking, and add more when you need them.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false" id="fq4" aria-controls="fa4">Do you provide video production?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="fa4" role="region" aria-labelledby="fq4"><div><p>Yes. Our team handles concept, script, shoot and edit, and delivers cuts for each ad placement.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false" id="fq5" aria-controls="fa5">Do you provide server-side tracking?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="fa5" role="region" aria-labelledby="fq5"><div><p>Yes. We set up Meta Pixel with Conversions API, server-side Google Tag Manager, GA4 and ecommerce events, with deduplication.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false" id="fq6" aria-controls="fa6">How does onboarding work?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="fa6" role="region" aria-labelledby="fq6"><div><p>We follow our four-step framework: a discovery call, a written strategy, launch, then ongoing optimization and reporting.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q" aria-expanded="false" id="fq7" aria-controls="fa7">How can we start working together?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="fa7" role="region" aria-labelledby="fq7"><div><p>Send us a message on WhatsApp or by email, or use the contact form. We will set up a short call to understand your goals.</p></div></div></div>
+        {faq.items.map((q, i) => (
+          <div class="faq-item"><button class="faq-q" aria-expanded="false" id={`fq${i}`} aria-controls={`fa${i}`}>{q.question}<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id={`fa${i}`} role="region" aria-labelledby={`fq${i}`}><div><p>{q.answer}</p></div></div></div>
+        ))}
       </div>
     </div>
   </div>

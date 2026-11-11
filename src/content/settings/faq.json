@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "question": "What services does Ecommetrix provide?",
+      "answer": "Google Ads, Meta Ads, TikTok Ads, video and creative production, website design and development, graphics design, email marketing, content support, and server-side and conversion tracking."
+    },
+    {
+      "question": "Do you work with international businesses?",
+      "answer": "Yes. We are based in Dhaka and work with businesses in Bangladesh and abroad."
+    },
+    {
+      "question": "Can we hire individual services?",
+      "answer": "Yes. You can start with one service, such as Meta Ads or tracking, and add more when you need them."
+    },
+    {
+      "question": "Do you provide video production?",
+      "answer": "Yes. Our team handles concept, script, shoot and edit, and delivers cuts for each ad placement."
+    },
+    {
+      "question": "Do you provide server-side tracking?",
+      "answer": "Yes. We set up Meta Pixel with Conversions API, server-side Google Tag Manager, GA4 and ecommerce events, with deduplication."
+    },
+    {
+      "question": "How does onboarding work?",
+      "answer": "We follow our four-step framework: a discovery call, a written strategy, launch, then ongoing optimization and reporting."
+    },
+    {
+      "question": "How can we start working together?",
+      "answer": "Send us a message on WhatsApp or by email, or use the contact form. We will set up a short call to understand your goals."
+    }
+  ]
+}

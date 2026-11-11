@@ -2,33 +2,24 @@
 
 Pages: Home `/` · Services `/services` · Our Work `/work` · Work detail `/work/<name>` · Blog `/blog` · Blog post `/blog/<name>` · Contact `/contact`
 
-## Where to change things (no coding needed, just edit text)
+## Edit the site from the dashboard (Pages CMS)
+1. Go to https://app.pagescms.org and click **Sign in with GitHub**.
+2. Open **ecommetrixbd-web / ecommetrixbd-website** (branch `main`).
+3. Use the sections in the left menu: Site Settings, Homepage, Services, Video Portfolio, Our Work, Team, Blog, FAQ, and Media (all uploaded images/videos).
+4. Click **Save**. Cloudflare rebuilds the site; changes are live in about 1–2 minutes.
 
-| What | File |
-|---|---|
-| Phone, email, address, Facebook, form key | `src/data/site.ts` |
-| Hero carousel slides and their images | `src/data/site.ts` → `heroSlides` |
-| Portfolio projects and their detail pages | `src/data/work.ts` |
-| Colors and fonts | `src/styles/global.css` (top: `--noir`, `--oxblood`, `--gold` …) |
-| Images | put files in `public/images/services/` or `public/images/work/`, then write the path, e.g. `'/images/services/meta-ads.jpg'` |
-| Video inside the "Video & Creative" card | save an MP4 as `public/videos/creative-reel.mp4` (5–10 seconds, under 3 MB) |
-| Team members | `src/components/Team.astro` |
+Tips
+- Lists (slides, services, videos, team, FAQ): drag items to reorder, use the + button to add.
+- Theme colors are in **Site Settings → Theme colors** (hex codes like `#5C1423`).
+- A social icon only appears in the footer when its link is filled in.
+- Videos: paste a YouTube/Vimeo link (best, keeps the site fast) or upload an MP4 (keep it small).
+- Images: upload JPG/PNG/WebP, ideally under 300 KB each.
 
-A dashboard for all of this comes in Phase 4.
-
-## Write a blog post
-1. Copy any file in `src/content/blog/`, e.g. `boost-vs-ads-manager.md`, and rename it. The file name becomes the web address: `my-new-post.md` → `/blog/my-new-post`. Use small letters and dashes only.
-2. Change the top part between the `---` lines:
-   - `title`, `description` (1–2 lines), `date` (YYYY-MM-DD)
-   - `category`: one of `Meta Ads`, `Tracking`, `Content`, `Case Studies`, `Tips`
-   - `cover` (optional): e.g. `/images/blog/my-post.jpg` (put the image in `public/images/blog/`)
-   - `draft: true` hides the post until you are ready
-3. Write the post below the second `---`. `## Heading` makes a heading, `- item` makes a list, `**word**` makes bold.
-Common error: the build fails with "category" → the category must be spelled exactly as in the list above.
+Where the dashboard saves things (for developers): `src/content/settings/*.json`, `src/content/work/*.json`, `src/content/blog/*.md`, images in `public/images/`, videos in `public/videos/`. Dashboard setup: `.pages.yml`.
 
 ## Contact form → your email
 1. Go to https://web3forms.com, enter your email, copy the **Access Key**.
-2. Paste it in `src/data/site.ts` → `web3formsKey: 'your-key'`.
+2. Paste it in the dashboard: **Site Settings → Contact form key**.
 Without a key the form only shows the "Thanks" message and sends nothing.
 
 ## Run it on your Mac (optional)

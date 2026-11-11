@@ -1,0 +1,135 @@
+{
+  "creative_video": "/videos/creative-reel.mp4",
+  "creative_video_poster": "",
+  "items": [
+    {
+      "art": "meta-ads",
+      "size": "wide",
+      "label": "01 / Performance",
+      "title": "Meta Ads",
+      "text": "Facebook and Instagram campaigns that pair sharp creative with clean data, so budget goes where sales come from.",
+      "bullets": [
+        "Campaign strategy",
+        "Creative testing",
+        "Retargeting",
+        "CAPI-ready setup"
+      ],
+      "link_text": "Learn more",
+      "link_url": "/contact"
+    },
+    {
+      "art": "google-ads",
+      "size": "wide",
+      "label": "02 / Performance",
+      "title": "Google Ads",
+      "text": "Search, Performance Max and YouTube campaigns built around the searches that bring buyers, not just clicks.",
+      "bullets": [
+        "Search & Shopping",
+        "Performance Max",
+        "YouTube & Demand Gen",
+        "Conversion tracking"
+      ],
+      "link_text": "Learn more",
+      "link_url": "/contact"
+    },
+    {
+      "art": "tiktok-ads",
+      "size": "normal",
+      "label": "03 / Performance",
+      "title": "TikTok Ads",
+      "text": "Short-form campaigns made for the feed, from the first-second hook to the checkout.",
+      "bullets": [
+        "Native creative",
+        "Spark Ads",
+        "Events API"
+      ],
+      "link_text": "Learn more",
+      "link_url": "/contact"
+    },
+    {
+      "art": "video",
+      "size": "normal",
+      "label": "04 / Creative",
+      "title": "Video & Creative Production",
+      "text": "OVCs, product films and social video, shot and edited by our own team and cut for every ad placement.",
+      "bullets": [
+        "Concept & script",
+        "Shoot & edit",
+        "9:16 · 4:5 · 16:9 cuts"
+      ],
+      "link_text": "Watch our work",
+      "link_url": "/work#showreel"
+    },
+    {
+      "art": "website",
+      "size": "normal",
+      "label": "05 / Technology",
+      "title": "Website Design & Development",
+      "text": "Fast, conversion-focused websites and landing pages, designed for mobile first.",
+      "bullets": [
+        "UX & UI design",
+        "WordPress",
+        "Landing pages & CRO"
+      ],
+      "link_text": "Learn more",
+      "link_url": "/contact"
+    },
+    {
+      "art": "graphics",
+      "size": "normal",
+      "label": "06 / Creative",
+      "title": "Graphics Design",
+      "text": "Brand identities and social creatives that look consistent everywhere your customer sees you.",
+      "bullets": [
+        "Brand identity",
+        "Social & ad creatives",
+        "Key visuals"
+      ],
+      "link_text": "Learn more",
+      "link_url": "/contact"
+    },
+    {
+      "art": "email",
+      "size": "normal",
+      "label": "07 / Retention",
+      "title": "Email Marketing",
+      "text": "Automated flows and campaigns that bring customers back without more ad spend.",
+      "bullets": [
+        "Welcome & cart flows",
+        "Segmentation",
+        "Newsletters"
+      ],
+      "link_text": "Learn more",
+      "link_url": "/contact"
+    },
+    {
+      "art": "content",
+      "size": "normal",
+      "label": "08 / Creative",
+      "title": "Content Support",
+      "text": "Monthly content planning and production that keeps your pages active, on-brand and on schedule.",
+      "bullets": [
+        "Content calendar",
+        "Bangla & English copy",
+        "Reels & posts"
+      ],
+      "link_text": "Learn more",
+      "link_url": "/contact"
+    },
+    {
+      "art": "tracking",
+      "size": "full",
+      "label": "09 / Data",
+      "title": "Server-Side Tracking & Conversion Tracking",
+      "text": "First-party, server-side measurement so ad platforms receive cleaner, more complete conversion data, and your budget decisions rest on numbers you can trust.",
+      "bullets": [
+        "Meta Pixel + Conversions API",
+        "Server-side GTM",
+        "GA4 & ecommerce events",
+        "Event deduplication"
+      ],
+      "link_text": "See tracking work",
+      "link_url": "/work?tab=tracking#work"
+    }
+  ]
+}

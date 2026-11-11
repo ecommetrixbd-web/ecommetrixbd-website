@@ -1,23 +1,23 @@
 ---
-import { heroSlides } from '../data/site';
+import { heroSlides, home } from '../data/site';
 const total = heroSlides.length + 1;
 ---
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow fade-in" style="--d:.05s">Performance marketing agency · Dhaka</span>
+        <span class="eyebrow fade-in" style="--d:.05s">{home.eyebrow}</span>
         <h1 id="hero-title">
-          <span class="ln"><span style="--i:0">We run your ads,</span></span>
-          <span class="ln"><span style="--i:1">make your videos</span></span>
-          <span class="ln"><span style="--i:2">and track every sale.</span></span>
+          <span class="ln"><span style="--i:0">{home.headline_line_1}</span></span>
+          <span class="ln"><span style="--i:1">{home.headline_line_2}</span></span>
+          <span class="ln"><span style="--i:2">{home.headline_line_3}</span></span>
         </h1>
-        <p class="lead fade-in" style="--d:.65s">We plan your campaigns, shoot the content, build the pages and set up the tracking. So you can see which taka brought back a sale and which one didn't.</p>
+        <p class="lead fade-in" style="--d:.65s">{home.intro}</p>
         <div class="hero-actions fade-in" style="--d:.8s">
-          <a class="btn btn-light" href="/contact">Get a free audit <span class="arr">↗</span></a>
-          <a class="btn btn-ghost" href="/work">See our work <span class="arr">→</span></a>
+          <a class="btn btn-light" href={home.button_1_link}>{home.button_1_text} <span class="arr">↗</span></a>
+          <a class="btn btn-ghost" href={home.button_2_link}>{home.button_2_text} <span class="arr">→</span></a>
         </div>
-        <p class="rotator fade-in" style="--d:.95s" aria-live="off"><span class="dot"></span>We do <b id="rot">Meta Ads</b></p>
+        <p class="rotator fade-in" style="--d:.95s" aria-live="off"><span class="dot"></span>We do <b id="rot" data-words={JSON.stringify(home.rotator_words)}>{home.rotator_words[0] ?? ''}</b></p>
       </div>
 
       <div class="hero-carousel fade-in" style="--d:.3s" role="region" aria-roledescription="carousel" aria-label="Ecommetrix and our services">
@@ -59,7 +59,7 @@ const total = heroSlides.length + 1;
       </div>
     </div>
     <div class="hero-foot fade-in" style="--d:1.1s">
-      <span>Ads · Video · Websites · Tracking</span>
+      <span>{home.hero_strip}</span>
       <span class="scroll-cue"><i></i>Scroll down</span>
     </div>
   </div>

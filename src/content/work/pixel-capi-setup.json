@@ -1,0 +1,25 @@
+{
+  "title": "Pixel + Conversions API setup",
+  "category": "tracking",
+  "order": 4,
+  "tags": [
+    "Meta Pixel",
+    "CAPI",
+    "Dedup"
+  ],
+  "summary": "Browser and server events sent to Meta without double counting.",
+  "client": "Client name",
+  "challenge": "What problem the client had when they came to us.",
+  "approach": [
+    "What we did first.",
+    "What we changed or built.",
+    "How we tested and improved it."
+  ],
+  "results": [
+    "Verified result 1",
+    "Verified result 2",
+    "Verified result 3"
+  ],
+  "image": "",
+  "sample": true
+}

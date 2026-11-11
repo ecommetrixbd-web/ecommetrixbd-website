@@ -1,3 +1,7 @@
+---
+import { team } from '../data/site';
+const initials = (n: string) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+---
 <section class="section team" id="team" aria-labelledby="team-title" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
@@ -8,49 +12,17 @@
       <p class="lead">Marketers, video editors and designers, all working from our office in Aftabnagar, Dhaka.</p>
     </div>
     <div class="team-grid">
-      <figure class="member rv" style="--i:0">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg0" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg0)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">AR</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Ahmed Russell</h3><span class="role">Founder &amp; CEO</span></div><a class="in" href="#team" aria-label="Ahmed Russell profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:1">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg1" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg1)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">NH</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Nahid Hasan</h3><span class="role">Co-Founder &amp; Creative Director</span></div><a class="in" href="#team" aria-label="Nahid Hasan profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:2">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg2" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg2)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">RA</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Rijwan Ahmed</h3><span class="role">Project Manager</span></div><a class="in" href="#team" aria-label="Rijwan Ahmed profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:3">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg3" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg3)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">AS</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Abu Bakar Siddique</h3><span class="role">Digital Marketing Executive</span></div><a class="in" href="#team" aria-label="Abu Bakar Siddique profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:4">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg4" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg4)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">ST</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Saba Tassum</h3><span class="role">Assistant Digital Marketing Executive</span></div><a class="in" href="#team" aria-label="Saba Tassum profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:0">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg9" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg9)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">MR</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Muhammad Rifat Islam</h3><span class="role">Software Engineer</span></div><a class="in" href="#team" aria-label="Muhammad Rifat Islam profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:1">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg5" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg5)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">RI</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Rahidul Islam</h3><span class="role">Sales Executive</span></div><a class="in" href="#team" aria-label="Rahidul Islam profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:2">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg6" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg6)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">R</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Rajib</h3><span class="role">Senior Video Editor</span></div><a class="in" href="#team" aria-label="Rajib profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:3">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg7" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg7)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">SR</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Shishir Roy</h3><span class="role">Senior Video Editor</span></div><a class="in" href="#team" aria-label="Shishir Roy profile (link to add)">in</a></figcaption>
-      </figure>
-      <figure class="member rv" style="--i:4">
-        <div class="photo"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id="pg8" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill="url(#pg8)"/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">N</text></svg><span class="ph">Add photo</span><span class="line"></span></div>
-        <figcaption><div><h3>Nahar</h3><span class="role">Graphics Designer</span></div><a class="in" href="#team" aria-label="Nahar profile (link to add)">in</a></figcaption>
-      </figure>
-    </div>
-    <div class="team-note">
-            <span class="ph">Real photos pending</span>
+      {team.members.map((m, i) => (
+        <figure class="member rv" style={`--i:${i % 5}`}>
+          <div class="photo">
+            {m.photo
+              ? <img src={m.photo} alt={m.name} loading="lazy" decoding="async" />
+              : <><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id={`pg${i}`} cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill={`url(#pg${i})`}/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">{initials(m.name)}</text></svg><span class="ph">Add photo</span></>}
+            <span class="line"></span>
+          </div>
+          <figcaption><div><h3>{m.name}</h3><span class="role">{m.role}</span></div>{m.linkedin && <a class="in" href={m.linkedin} target="_blank" rel="noopener" aria-label={`${m.name} on LinkedIn`}>in</a>}</figcaption>
+        </figure>
+      ))}
     </div>
   </div>
 </section>

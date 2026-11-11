@@ -1,3 +1,6 @@
+---
+import { home } from '../data/site';
+---
 <section class="section" id="about" aria-labelledby="about-title">
   <div class="wrap">
     <div class="about-grid">
@@ -14,10 +17,9 @@
       </div>
     </div>
     <div class="stats">
-      <div class="stat rv"><b>—</b><span>Years in business</span><span class="ph">Add verified number</span></div>
-      <div class="stat rv" style="--i:1"><b>—</b><span>Ad spend managed</span><span class="ph">Add verified number</span></div>
-      <div class="stat rv" style="--i:2"><b>—</b><span>Content pieces produced</span><span class="ph">Add verified number</span></div>
-      <div class="stat rv" style="--i:3"><b>—</b><span>Brands served</span><span class="ph">Add verified number</span></div>
+      {home.stats.map((st, i) => (
+        <div class="stat rv" style={`--i:${i}`}><b>{st.value || '—'}</b><span>{st.label}</span>{!st.value && <span class="ph">Add verified number</span>}</div>
+      ))}
     </div>
   </div>
 </section>

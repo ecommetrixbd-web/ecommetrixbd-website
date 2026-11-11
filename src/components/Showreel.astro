@@ -1,5 +1,15 @@
 ---
+import { videos } from '../data/site';
 const { full = false } = Astro.props;
+
+const ytId = (u = '') => (u.match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/) || [])[1];
+const thumbOf = (v: { thumbnail?: string; video_url?: string }) =>
+  v.thumbnail || (ytId(v.video_url) ? `https://img.youtube.com/vi/${ytId(v.video_url)}/hqdefault.jpg` : '');
+const srcOf = (v: { video_file?: string; video_url?: string }) => v.video_file || v.video_url || '';
+
+const reel = videos.showreel;
+const list = full ? videos.items : videos.items.filter((v) => v.on_homepage);
+const fmtLabel: Record<string, string> = { wide: '16:9', tall: '9:16', square: '4:5' };
 ---
 <section class="section dark video" id="showreel" aria-labelledby="video-title">
   <div class="wrap">
@@ -11,52 +21,36 @@ const { full = false } = Astro.props;
       <p class="lead">Brand films, OVCs, product videos and reels. Planned, shot and edited by our own team, and cut for every ad placement.</p>
     </div>
 
-    <button class="reel" type="button" data-video="Ecommetrix Showreel" data-cat="Showreel" aria-label="Play Ecommetrix showreel">
+    <button class="reel" type="button" data-video={reel.title} data-cat="Showreel" data-src={srcOf(reel)} aria-label={`Play ${reel.title}`}>
       <span class="poster" aria-hidden="true">
-        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-          <defs><radialGradient id="rp" cx="70%" cy="35%" r="80%"><stop offset="0" stop-color="#7A2234"/><stop offset=".5" stop-color="#2A0F17"/><stop offset="1" stop-color="#0E0507"/></radialGradient></defs>
-          <rect width="1600" height="900" fill="url(#rp)"/>
-          <g fill="none" stroke="#B8955A" stroke-opacity=".18"><circle cx="1150" cy="330" r="220"/><circle cx="1150" cy="330" r="330"/><circle cx="1150" cy="330" r="440"/></g>
-          <g opacity=".14" fill="#F5F0E8"><rect x="80" y="70" width="6" height="760"/><rect x="1514" y="70" width="6" height="760"/></g>
-          <text x="80" y="140" font-family="Manrope,system-ui,sans-serif" font-size="200" font-weight="800" fill="#F5F0E8" fill-opacity=".05" letter-spacing="-8">SHOWREEL</text>
-        </svg>
+        {thumbOf(reel)
+          ? <img src={thumbOf(reel)} alt="" />
+          : <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+              <defs><radialGradient id="rp" cx="70%" cy="35%" r="80%"><stop offset="0" stop-color="#7A2234"/><stop offset=".5" stop-color="#2A0F17"/><stop offset="1" stop-color="#0E0507"/></radialGradient></defs>
+              <rect width="1600" height="900" fill="url(#rp)"/>
+              <g fill="none" stroke="#B8955A" stroke-opacity=".18"><circle cx="1150" cy="330" r="220"/><circle cx="1150" cy="330" r="330"/><circle cx="1150" cy="330" r="440"/></g>
+              <text x="80" y="140" font-family="Manrope,system-ui,sans-serif" font-size="200" font-weight="800" fill="#F5F0E8" fill-opacity=".05" letter-spacing="-8">SHOWREEL</text>
+            </svg>}
       </span>
       <span class="playbtn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
       <span class="meta">
-        <span><small>Featured showreel</small><h3>Ecommetrix Showreel 2026</h3></span>
-        <span class="ph">Add showreel video</span>
+        <span><small>Featured showreel</small><h3>{reel.title}</h3></span>
+        {!srcOf(reel) && <span class="ph">Add showreel video</span>}
       </span>
     </button>
 
-    <div class={full ? "vgrid full" : "vgrid"}>
-      <button class="vcard wide" type="button" data-video="Brand film" data-cat="Brand Video">
-        <span class="thumb"><svg viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="t1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1A0A0F"/></linearGradient></defs><rect width="160" height="90" fill="url(#t1)"/><circle cx="120" cy="30" r="26" fill="#B8955A" opacity=".18"/></svg><span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></span>
-        <span class="cap"><h4>Brand film <span class="ph">Placeholder</span></h4><span class="cat">Brand video</span></span>
-      </button>
-      <button class="vcard tall" type="button" data-video="Short-form ad" data-cat="Social Video Ad" data-tall="1">
-        <span class="thumb"><svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="t2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A1C22"/><stop offset="1" stop-color="#7A2234"/></linearGradient></defs><rect width="90" height="160" fill="url(#t2)"/><rect x="10" y="118" width="44" height="4" rx="2" fill="#F5F0E8" opacity=".6"/><rect x="10" y="126" width="30" height="4" rx="2" fill="#F5F0E8" opacity=".35"/></svg><span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></span>
-        <span class="cap"><h4>Short-form ad <span class="ph">Placeholder</span></h4><span class="cat">9:16</span></span>
-      </button>
-      <div class="vstack">
-        <button class="vcard" type="button" data-video="Product video" data-cat="Product Video">
-          <span class="thumb"><svg viewBox="0 0 80 100" preserveAspectRatio="xMidYMid slice"><rect width="80" height="100" fill="#26131A"/><rect x="24" y="30" width="32" height="44" rx="4" fill="#B8955A" opacity=".35"/></svg><span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></span>
-          <span class="cap"><h4>Product video <span class="ph">Placeholder</span></h4><span class="cat">Product</span></span>
+    <div class={full ? 'vgrid full' : 'vgrid'}>
+      {list.map((v, i) => (
+        <button class={`vcard ${v.format}`} type="button" data-video={v.title} data-cat={v.category} data-src={srcOf(v)} data-tall={v.format === 'tall' ? '1' : undefined}>
+          <span class="thumb">
+            {thumbOf(v)
+              ? <img src={thumbOf(v)} alt="" loading="lazy" decoding="async" />
+              : <svg viewBox="0 0 160 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id={`vt${i}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#140709"/></linearGradient></defs><rect width="160" height="160" fill={`url(#vt${i})`}/><circle cx="120" cy="40" r="34" fill="#B8955A" opacity=".14"/></svg>}
+            <span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+          </span>
+          <span class="cap"><h4>{v.title}{!srcOf(v) && <span class="ph">Add video</span>}</h4><span class="cat">{v.category || fmtLabel[v.format]}</span></span>
         </button>
-      </div>
-      <button class="vcard tall" type="button" data-video="Reel creative" data-cat="Short-form Creative" data-tall="1">
-        <span class="thumb"><svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="t3" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#16090C"/><stop offset="1" stop-color="#5C1423"/></linearGradient></defs><rect width="90" height="160" fill="url(#t3)"/><circle cx="45" cy="56" r="20" fill="#F5F0E8" opacity=".06"/></svg><span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></span>
-        <span class="cap"><h4>Reel creative <span class="ph">Placeholder</span></h4><span class="cat">9:16</span></span>
-      </button>
-      <button class="vcard wide" type="button" data-video="Commercial (OVC)" data-cat="Commercial">
-        <span class="thumb"><svg viewBox="0 0 160 90" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="t4" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A1520"/><stop offset="1" stop-color="#0E0507"/></linearGradient></defs><rect width="160" height="90" fill="url(#t4)"/><rect x="0" y="0" width="160" height="9" fill="#000" opacity=".35"/><rect x="0" y="81" width="160" height="9" fill="#000" opacity=".35"/></svg><span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></span>
-        <span class="cap"><h4>Commercial (OVC) <span class="ph">Placeholder</span></h4><span class="cat">Commercial</span></span>
-      </button>
-      <div class="vstack">
-        <button class="vcard" type="button" data-video="Promotional video" data-cat="Promotional Video">
-          <span class="thumb"><svg viewBox="0 0 80 100" preserveAspectRatio="xMidYMid slice"><rect width="80" height="100" fill="#2A1118"/><path d="M0 70 L80 40 V100 H0Z" fill="#5C1423" opacity=".6"/></svg><span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></span>
-          <span class="cap"><h4>Promotional video <span class="ph">Placeholder</span></h4><span class="cat">Promo</span></span>
-        </button>
-      </div>
+      ))}
     </div>
     {!full && <div class="center"><a class="btn btn-ghost" href="/work#showreel">View all videos <span class="arr">→</span></a></div>}
   </div>

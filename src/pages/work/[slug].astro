@@ -2,12 +2,13 @@
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import Cta from '../../components/Cta.astro';
-import { work, workTabs } from '../../data/work';
+import { getWork, workTabs } from '../../data/work';
 
-export function getStaticPaths() {
-  return work.map((w) => ({ params: { slug: w.slug }, props: { item: w } }));
+export async function getStaticPaths() {
+  const work = await getWork();
+  return work.map((w) => ({ params: { slug: w.slug }, props: { item: w, work } }));
 }
-const { item } = Astro.props;
+const { item, work } = Astro.props;
 const cat = workTabs.find((t) => t.id === item.category)?.label;
 const more = work.filter((w) => w.category === item.category && w.slug !== item.slug).slice(0, 3);
 ---
@@ -21,7 +22,7 @@ const more = work.filter((w) => w.category === item.category && w.slug !== item.
         <div class="detail-media">
           {item.image ? <img src={item.image} alt={item.title} /> : <span class="ph">Add project image or video</span>}
         </div>
-        {item.placeholder && <p style="margin-top:var(--s3)"><span class="ph">Sample text, replace with the real project</span></p>}
+        {item.sample && <p style="margin-top:var(--s3)"><span class="ph">Sample text, replace with the real project</span></p>}
         <h2>The challenge</h2>
         <p>{item.challenge}</p>
         <h2>What we did</h2>

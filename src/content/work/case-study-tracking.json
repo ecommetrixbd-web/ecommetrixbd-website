@@ -1,0 +1,24 @@
+{
+  "title": "Case study title",
+  "category": "cases",
+  "order": 9,
+  "tags": [
+    "Tracking",
+    "Google Ads"
+  ],
+  "summary": "Client, problem and result in one line.",
+  "client": "Client name",
+  "challenge": "What problem the client had when they came to us.",
+  "approach": [
+    "What we did first.",
+    "What we changed or built.",
+    "How we tested and improved it."
+  ],
+  "results": [
+    "Verified result 1",
+    "Verified result 2",
+    "Verified result 3"
+  ],
+  "image": "",
+  "sample": true
+}

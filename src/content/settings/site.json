@@ -1,0 +1,27 @@
+{
+  "name": "Ecommetrix",
+  "domain": "ecommetrixbd.com",
+  "tagline": "Data → Content → Sales",
+  "description": "Ecommetrix is a performance marketing agency in Dhaka. Meta, Google and TikTok ads, video production, websites and server-side tracking.",
+  "phone": "+880 1531-753599",
+  "whatsapp": "8801531753599",
+  "email": "ecommetrixbd@gmail.com",
+  "address": "Block-D, Road-01, House-35, Aftabnagar, Dhaka 1212",
+  "address_short": "Aftabnagar, Dhaka",
+  "footer_text": "Performance marketing, video production, websites and tracking. Based in Aftabnagar, Dhaka.",
+  "web3forms_key": "",
+  "socials": {
+    "facebook": "https://facebook.com/ecommetrix",
+    "instagram": "",
+    "youtube": "",
+    "tiktok": "",
+    "x": "",
+    "linkedin": ""
+  },
+  "colors": {
+    "dark": "#16090C",
+    "primary": "#5C1423",
+    "accent": "#B8955A",
+    "light": "#F5F0E8"
+  }
+}
