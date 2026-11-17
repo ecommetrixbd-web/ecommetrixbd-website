@@ -23,63 +23,53 @@
   "slides": [
     {
       "name": "Meta Ads",
-      "image": ""
+      "image": "/images/meta_ads_card_icon.webp"
     },
     {
       "name": "Google Ads",
-      "image": ""
+      "image": "/images/google_ads_card_on_burgundy_gradient.webp"
     },
     {
       "name": "TikTok Ads",
-      "image": ""
+      "image": "/images/tiktok_ads_card_stack.webp"
     },
     {
       "name": "Video & Creative Production",
-      "image": ""
+      "image": "/images/video__creative_production_badge.webp"
     },
     {
       "name": "Website Design & Development",
-      "image": ""
+      "image": "/images/website_design__development_emblem.webp"
     },
     {
       "name": "Graphics Design",
-      "image": ""
+      "image": "/images/graphic_design_monitor_icon.webp"
     },
     {
       "name": "Email Marketing",
-      "image": ""
+      "image": "/images/email_marketing_card.webp"
     },
     {
       "name": "Content Support",
-      "image": ""
+      "image": "/images/content_support_card.webp"
     },
     {
       "name": "Server-Side Tracking",
-      "image": ""
+      "image": "/images/server-side_tracking_analytics.webp"
     }
   ],
   "stats": [
     {
-      "value": "",
       "label": "Years in business"
     },
     {
-      "value": "",
       "label": "Ad spend managed"
     },
     {
-      "value": "",
       "label": "Content pieces produced"
     },
     {
-      "value": "",
       "label": "Brands served"
     }
-  ],
-  "client_logos": [],
-  "testimonial": {
-    "quote": "",
-    "name": "",
-    "role": ""
-  }
+  ]
 }
