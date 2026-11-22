@@ -15,7 +15,15 @@
         "CAPI-ready setup"
       ],
       "link_text": "Learn more",
-      "link_url": "/contact"
+      "link_url": "/contact",
+      "text_bn": "Facebook আর Instagram campaign — ধারালো creative আর পরিষ্কার data দিয়ে, যাতে বাজেট যায় যেখান থেকে সেল আসে।",
+      "bullets_bn": [
+        "Campaign strategy",
+        "Creative testing",
+        "Retargeting",
+        "CAPI-ready setup"
+      ],
+      "link_text_bn": "আরও জানুন"
     },
     {
       "art": "google-ads",
@@ -30,7 +38,15 @@
         "Conversion tracking"
       ],
       "link_text": "Learn more",
-      "link_url": "/contact"
+      "link_url": "/contact",
+      "text_bn": "Search, Performance Max আর YouTube campaign — যারা কিনতে খুঁজছে, তাদের সামনে, শুধু click-এর জন্য না।",
+      "bullets_bn": [
+        "Search & Shopping",
+        "Performance Max",
+        "YouTube & Demand Gen",
+        "Conversion tracking"
+      ],
+      "link_text_bn": "আরও জানুন"
     },
     {
       "art": "tiktok-ads",
@@ -44,7 +60,14 @@
         "Events API"
       ],
       "link_text": "Learn more",
-      "link_url": "/contact"
+      "link_url": "/contact",
+      "text_bn": "Feed-এর জন্য বানানো short-form campaign — প্রথম সেকেন্ডের hook থেকে checkout পর্যন্ত।",
+      "bullets_bn": [
+        "Native creative",
+        "Spark Ads",
+        "Events API"
+      ],
+      "link_text_bn": "আরও জানুন"
     },
     {
       "art": "video",
@@ -58,7 +81,14 @@
         "9:16 · 4:5 · 16:9 cuts"
       ],
       "link_text": "Watch our work",
-      "link_url": "/work#showreel"
+      "link_url": "/work#showreel",
+      "text_bn": "OVC, product film আর social video — আমাদের নিজের টিম শুট ও এডিট করে, প্রতিটা ad placement-এর মাপে।",
+      "bullets_bn": [
+        "Concept ও script",
+        "Shoot ও edit",
+        "9:16 · 4:5 · 16:9 cut"
+      ],
+      "link_text_bn": "আমাদের কাজ দেখুন"
     },
     {
       "art": "website",
@@ -72,7 +102,14 @@
         "Landing pages & CRO"
       ],
       "link_text": "Learn more",
-      "link_url": "/contact"
+      "link_url": "/contact",
+      "text_bn": "দ্রুত, conversion-focused ওয়েবসাইট আর landing page — মোবাইল আগে মাথায় রেখে।",
+      "bullets_bn": [
+        "UX ও UI design",
+        "WordPress",
+        "Landing page ও CRO"
+      ],
+      "link_text_bn": "আরও জানুন"
     },
     {
       "art": "graphics",
@@ -86,7 +123,14 @@
         "Key visuals"
       ],
       "link_text": "Learn more",
-      "link_url": "/contact"
+      "link_url": "/contact",
+      "text_bn": "Brand identity আর social creative — কাস্টমার যেখানেই দেখুক, আপনাকে একই রকম দেখাবে।",
+      "bullets_bn": [
+        "Brand identity",
+        "Social ও ad creative",
+        "Key visual"
+      ],
+      "link_text_bn": "আরও জানুন"
     },
     {
       "art": "email",
@@ -100,7 +144,14 @@
         "Newsletters"
       ],
       "link_text": "Learn more",
-      "link_url": "/contact"
+      "link_url": "/contact",
+      "text_bn": "Automated flow আর campaign — বাড়তি ad খরচ ছাড়াই কাস্টমারকে আবার ফিরিয়ে আনে।",
+      "bullets_bn": [
+        "Welcome ও cart flow",
+        "Segmentation",
+        "Newsletter"
+      ],
+      "link_text_bn": "আরও জানুন"
     },
     {
       "art": "content",
@@ -114,7 +165,14 @@
         "Reels & posts"
       ],
       "link_text": "Learn more",
-      "link_url": "/contact"
+      "link_url": "/contact",
+      "text_bn": "মাসিক content প্ল্যান আর প্রোডাকশন — আপনার পেজ থাকবে সক্রিয়, on-brand, আর সময়মতো।",
+      "bullets_bn": [
+        "Content calendar",
+        "বাংলা ও English copy",
+        "Reels ও post"
+      ],
+      "link_text_bn": "আরও জানুন"
     },
     {
       "art": "tracking",
@@ -129,7 +187,15 @@
         "Event deduplication"
       ],
       "link_text": "See tracking work",
-      "link_url": "/work?tab=tracking#work"
+      "link_url": "/work?tab=tracking#work",
+      "text_bn": "First-party, server-side measurement — ad platform পায় আরও সঠিক conversion data, আর আপনার বাজেটের সিদ্ধান্ত দাঁড়ায় ভরসাযোগ্য সংখ্যার উপর।",
+      "bullets_bn": [
+        "Meta Pixel + Conversions API",
+        "Server-side GTM",
+        "GA4 ও ecommerce event",
+        "Event deduplication"
+      ],
+      "link_text_bn": "Tracking-এর কাজ দেখুন"
     }
   ]
 }

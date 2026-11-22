@@ -1,4 +1,7 @@
 ---
+import { getLang, pick } from '../i18n';
+const lang = getLang(Astro);
+const L = (o: any, k: string) => pick<any>(o, k, lang);
 import { services } from '../data/site';
 import { serviceArt } from './serviceArt';
 const { swipe = false, showHead = true } = Astro.props;
@@ -15,7 +18,7 @@ const fallbackArt = '<svg viewBox="0 0 400 250"><rect width="400" height="250" f
     {showHead && (<div class="sec-head">
       <div>
         <span class="eyebrow">What we do</span>
-        <h2 class="h2" id="svc-title">{services.items.length} services under one roof.</h2>
+        <h2 class="h2" id="svc-title">{lang === 'bn' ? `${services.items.length}টা সার্ভিস, এক ছাদের নিচে।` : `${services.items.length} services under one roof.`}</h2>
       </div>
       <p class="lead">Start with one service or hand us the whole job. You deal with the same team either way.</p>
     </div>)}
@@ -29,11 +32,11 @@ const fallbackArt = '<svg viewBox="0 0 400 250"><rect width="400" height="250" f
             {s.art === 'video' && videoTag && <span class="svc-rec" aria-hidden="true"><i></i>REC</span>}
           </div>
           <div class="body">
-            <span class="num">{s.label}</span>
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
-            {s.bullets?.length > 0 && <ul class="caps">{s.bullets.map((b) => <li>{b}</li>)}</ul>}
-            {s.link_text && <a class="link" href={s.link_url || '/contact'}>{s.link_text} <span class="arr">→</span></a>}
+            <span class="num">{L(s,"label")}</span>
+            <h3>{L(s,"title")}</h3>
+            <p>{L(s,"text")}</p>
+            {(L(s,"bullets") ?? []).length > 0 && <ul class="caps">{L(s,"bullets").map((b: string) => <li>{b}</li>)}</ul>}
+            {s.link_text && <a class="link" href={s.link_url || '/contact'}>{L(s,"link_text")} <span class="arr">→</span></a>}
           </div>
         </article>
       ))}

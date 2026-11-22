@@ -1,4 +1,5 @@
 (function(){
+  var T=window.I18N||{};function tr(k){return T[k]||k}
   var root=document.documentElement;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce) root.classList.add('motion');
@@ -79,16 +80,16 @@
   document.addEventListener('keydown',function(e){if(modal.hidden)return;if(e.key==='Escape')closeModal();if(e.key==='Tab'){e.preventDefault();mclose.focus()}});
 
   /* Copy buttons */
-  [].slice.call(document.querySelectorAll('.copy-btn')).forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-copy');var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};try{navigator.clipboard.writeText(v).then(done,function(){})}catch(e){}})});
+  [].slice.call(document.querySelectorAll('.copy-btn')).forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-copy');var done=function(){b.textContent=tr('Copied');setTimeout(function(){b.textContent=tr('Copy')},1600)};try{navigator.clipboard.writeText(v).then(done,function(){})}catch(e){}})});
 
 
   /* Lead form (preview: validates and shows success; WordPress sends email + dataLayer generate_lead) */
   var form=document.getElementById('leadForm');
   if(form){
-    var rules={name:function(v){return v.trim().length>=2||'Please enter your name.'},
-      email:function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())||'Please enter a valid email address.'},
-      phone:function(v){return v.replace(/[^\d]/g,'').length>=10||'Please enter a phone number with at least 10 digits.'},
-      service:function(v){return !!v||'Please choose a service.'}};
+    var rules={name:function(v){return v.trim().length>=2||tr('Please enter your name.')},
+      email:function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())||tr('Please enter a valid email address.')},
+      phone:function(v){return v.replace(/[^\d]/g,'').length>=10||tr('Please enter a phone number with at least 10 digits.')},
+      service:function(v){return !!v||tr('Please choose a service.')}};
     function check(el){var r=rules[el.name];if(!r)return true;var ok=r(el.value);var box=el.closest('.field'),err=document.getElementById(el.id+'-err');
       if(ok===true){box.classList.remove('bad');el.removeAttribute('aria-invalid');err.textContent='';return true}
       box.classList.add('bad');el.setAttribute('aria-invalid','true');el.setAttribute('aria-describedby',el.id+'-err');err.textContent=ok;return false}
@@ -106,7 +107,7 @@
       if(!key){done();return}
       btn.disabled=true;
       var fd=new FormData(form);fd.append('access_key',key);fd.append('subject','New website lead: '+form.service.value);fd.delete('company_website');
-      fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}).then(function(r){return r.json()}).then(function(j){btn.disabled=false;if(j.success)done();else alert('Sorry, the form could not be sent. Please message us on WhatsApp.')}).catch(function(){btn.disabled=false;alert('Sorry, the form could not be sent. Please message us on WhatsApp.')});
+      fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}).then(function(r){return r.json()}).then(function(j){btn.disabled=false;if(j.success)done();else alert(tr('Sorry, the form could not be sent. Please message us on WhatsApp.'))}).catch(function(){btn.disabled=false;alert(tr('Sorry, the form could not be sent. Please message us on WhatsApp.'))});
     });
   }
 

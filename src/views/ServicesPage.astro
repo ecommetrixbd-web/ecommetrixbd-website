@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Services from '../components/Services.astro';
+import Framework from '../components/Framework.astro';
+import Why from '../components/Why.astro';
+import Cta from '../components/Cta.astro';
+---
+<Base title="Services | Ecommetrix" description="Meta, Google and TikTok ads, video production, website design, graphics, email marketing, content support and server-side tracking in Dhaka.">
+  <PageHeader eyebrow="Services" title="Nine services. Hire one or all of them." lead="Ads, video, design, websites, email and tracking. Start with what you need now and add more later. You work with the same team either way." />
+  <div style="padding-top:var(--s5)"><Services showHead={false} /></div>
+  <Framework />
+  <Why />
+  <Cta />
+</Base>

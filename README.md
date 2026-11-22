@@ -17,6 +17,12 @@ Tips
 
 Where the dashboard saves things (for developers): `src/content/settings/*.json`, `src/content/work/*.json`, `src/content/blog/*.md`, images in `public/images/`, videos in `public/videos/`. Dashboard setup: `.pages.yml`.
 
+## Bangla version (/bn/)
+- English is at `/`, Bangla at `/bn/` (e.g. `/bn/services`). The EN / বাং switch is in the top menu.
+- In the dashboard, every text field has a Bangla twin marked **(বাংলা)** right below it. If a Bangla box is empty, the English text is shown on the Bangla page.
+- Blog posts are written in one language and appear on both versions.
+- Fixed interface text written in code (menu, buttons, section headings, form labels) is translated in `src/i18n/bn.json` (English text → Bangla text).
+
 ## Contact form → your email
 1. Go to https://web3forms.com, enter your email, copy the **Access Key**.
 2. Paste it in the dashboard: **Site Settings → Contact form key**.

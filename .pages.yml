@@ -1,5 +1,6 @@
 # Pages CMS dashboard — https://app.pagescms.org
 # Each "content" entry below is one section in the dashboard sidebar.
+# Fields ending in (বাংলা) are shown on the Bangla site (/bn/). Left empty, the English text is used.
 
 media:
   - name: images
@@ -24,12 +25,15 @@ content:
       - { name: name, label: Company name, type: string, required: true }
       - { name: tagline, label: Tagline (footer), type: string }
       - { name: description, label: Google description, type: text, description: "1–2 lines shown in Google search results." }
+      - { name: description_bn, label: "Google description (বাংলা)", type: text }
       - { name: phone, label: Phone (as shown), type: string }
       - { name: whatsapp, label: WhatsApp number, type: string, description: "Country code + number, digits only. Example: 8801531753599" }
       - { name: email, label: Email, type: string }
       - { name: address, label: Full address, type: text }
       - { name: address_short, label: Short address, type: string, description: "Example: Aftabnagar, Dhaka" }
+      - { name: address_short_bn, label: "Short address (বাংলা)", type: string }
       - { name: footer_text, label: Footer text, type: text }
+      - { name: footer_text_bn, label: "Footer text (বাংলা)", type: text }
       - { name: web3forms_key, label: Contact form key (Web3Forms), type: string, description: "Free key from web3forms.com. Form messages are emailed to you." }
       - name: socials
         label: Social links
@@ -61,16 +65,25 @@ content:
     format: json
     fields:
       - { name: eyebrow, label: Small line above headline, type: string }
+      - { name: eyebrow_bn, label: "Small line above headline (বাংলা)", type: string }
       - { name: headline_line_1, label: Headline line 1, type: string }
+      - { name: headline_line_1_bn, label: "Headline line 1 (বাংলা)", type: string }
       - { name: headline_line_2, label: Headline line 2, type: string }
+      - { name: headline_line_2_bn, label: "Headline line 2 (বাংলা)", type: string }
       - { name: headline_line_3, label: Headline line 3, type: string }
+      - { name: headline_line_3_bn, label: "Headline line 3 (বাংলা)", type: string }
       - { name: intro, label: Intro text, type: text }
+      - { name: intro_bn, label: "Intro text (বাংলা)", type: text }
       - { name: button_1_text, label: Main button text, type: string }
+      - { name: button_1_text_bn, label: "Main button text (বাংলা)", type: string }
       - { name: button_1_link, label: Main button link, type: string }
       - { name: button_2_text, label: Second button text, type: string }
+      - { name: button_2_text_bn, label: "Second button text (বাংলা)", type: string }
       - { name: button_2_link, label: Second button link, type: string }
       - { name: rotator_words, label: '"We do ..." rotating words', type: string, list: true }
+      - { name: rotator_words_bn, label: '"We do ..." rotating words (বাংলা)', type: string, list: true }
       - { name: hero_strip, label: Text under the hero, type: string }
+      - { name: hero_strip_bn, label: "Text under the hero (বাংলা)", type: string }
       - name: slides
         label: Hero carousel slides
         type: object
@@ -78,6 +91,7 @@ content:
         description: "The logo is always the first slide. Drag to reorder."
         fields:
           - { name: name, label: Slide title, type: string, required: true }
+          - { name: name_bn, label: "Slide title (বাংলা)", type: string }
           - { name: image, label: Image (square works best), type: image, options: { media: images } }
       - name: stats
         label: Stats numbers
@@ -86,6 +100,7 @@ content:
         fields:
           - { name: value, label: Number, type: string, description: "Example: 120+ or ৳2Cr+. Leave empty to show a placeholder." }
           - { name: label, label: Label, type: string }
+          - { name: label_bn, label: "Label (বাংলা)", type: string }
       - name: client_logos
         label: Client logos
         type: object
@@ -98,8 +113,10 @@ content:
         type: object
         fields:
           - { name: quote, label: Quote, type: text }
+          - { name: quote_bn, label: "Quote (বাংলা)", type: text }
           - { name: name, label: Client name, type: string }
           - { name: role, label: Position and company, type: string }
+          - { name: role_bn, label: "Position and company (বাংলা)", type: string }
 
   # ---------------------------------------------------------------- Services
   - name: services
@@ -117,10 +134,15 @@ content:
         description: "Drag to change the order."
         fields:
           - { name: title, label: Title, type: string, required: true }
+          - { name: title_bn, label: "Title (বাংলা)", type: string }
           - { name: label, label: Small label, type: string, description: "Example: 01 / Performance" }
+          - { name: label_bn, label: "Small label (বাংলা)", type: string }
           - { name: text, label: Short text, type: text }
+          - { name: text_bn, label: "Short text (বাংলা)", type: text }
           - { name: bullets, label: Bullet points, type: string, list: true }
+          - { name: bullets_bn, label: "Bullet points (বাংলা)", type: string, list: true }
           - { name: link_text, label: Link text, type: string }
+          - { name: link_text_bn, label: "Link text (বাংলা)", type: string }
           - { name: link_url, label: Link URL, type: string }
           - name: size
             label: Card size
@@ -158,6 +180,7 @@ content:
         type: object
         fields:
           - { name: title, label: Title, type: string }
+          - { name: title_bn, label: "Title (বাংলা)", type: string }
           - { name: video_url, label: YouTube or Vimeo link, type: string }
           - { name: video_file, label: Or upload MP4, type: file, options: { media: videos } }
           - { name: thumbnail, label: Cover image, type: image, options: { media: images }, description: "Optional for YouTube links (the YouTube thumbnail is used)." }
@@ -168,7 +191,9 @@ content:
         description: "Drag to reorder. On phones the homepage shows the first 3."
         fields:
           - { name: title, label: Title, type: string, required: true }
+          - { name: title_bn, label: "Title (বাংলা)", type: string }
           - { name: category, label: Category, type: string, description: "Example: Brand video, OVC, Reel" }
+          - { name: category_bn, label: "Category (বাংলা)", type: string }
           - name: format
             label: Shape
             type: select
@@ -195,6 +220,7 @@ content:
       sort: [ order, title ]
     fields:
       - { name: title, label: Project title, type: string, required: true }
+      - { name: title_bn, label: "Project title (বাংলা)", type: string }
       - name: category
         label: Tab
         type: select
@@ -208,10 +234,14 @@ content:
       - { name: client, label: Client, type: string }
       - { name: tags, label: Tags, type: string, list: true }
       - { name: summary, label: One-line summary (shown on cards), type: text }
+      - { name: summary_bn, label: "One-line summary (shown on cards) (বাংলা)", type: text }
       - { name: image, label: Image, type: image, options: { media: images } }
       - { name: challenge, label: The challenge, type: text }
+      - { name: challenge_bn, label: "The challenge (বাংলা)", type: text }
       - { name: approach, label: What we did (one step per line), type: string, list: true }
+      - { name: approach_bn, label: "What we did (one step per line) (বাংলা)", type: string, list: true }
       - { name: results, label: Results (one per line), type: string, list: true }
+      - { name: results_bn, label: "Results (one per line) (বাংলা)", type: string, list: true }
       - { name: sample, label: Sample text (shows a "replace me" badge), type: boolean, default: false }
 
   # ---------------------------------------------------------------- Team
@@ -229,6 +259,7 @@ content:
         fields:
           - { name: name, label: Name, type: string, required: true }
           - { name: role, label: Role, type: string }
+          - { name: role_bn, label: "Role (বাংলা)", type: string }
           - { name: photo, label: Photo (portrait 4:5), type: image, options: { media: images } }
           - { name: linkedin, label: LinkedIn URL, type: string }
 
@@ -272,4 +303,6 @@ content:
         description: "Drag to reorder."
         fields:
           - { name: question, label: Question, type: string, required: true }
+          - { name: question_bn, label: "Question (বাংলা)", type: string }
           - { name: answer, label: Answer, type: text, required: true }
+          - { name: answer_bn, label: "Answer (বাংলা)", type: text }

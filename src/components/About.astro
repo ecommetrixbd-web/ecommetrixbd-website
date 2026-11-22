@@ -1,4 +1,7 @@
 ---
+import { getLang, pick } from '../i18n';
+const lang = getLang(Astro);
+const L = (o: any, k: string) => pick<any>(o, k, lang);
 import { home } from '../data/site';
 ---
 <section class="section" id="about" aria-labelledby="about-title">
@@ -18,7 +21,7 @@ import { home } from '../data/site';
     </div>
     <div class="stats">
       {home.stats.map((st, i) => (
-        <div class="stat rv" style={`--i:${i}`}><b>{st.value || '—'}</b><span>{st.label}</span>{!st.value && <span class="ph">Add verified number</span>}</div>
+        <div class="stat rv" style={`--i:${i}`}><b>{st.value || '—'}</b><span>{L(st,"label")}</span>{!st.value && <span class="ph">Add verified number</span>}</div>
       ))}
     </div>
   </div>

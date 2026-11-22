@@ -3,9 +3,18 @@ import '../styles/global.css';
 import '../styles/additions.css';
 import { site } from '../data/site';
 import SocialIcons from '../components/SocialIcons.astro';
+import { getLang, pick, switchPath } from '../i18n';
+import bnText from '../i18n/bn.json';
+const lang = getLang(Astro);
+const L = (k: string) => pick<string>(site as any, k, lang);
 
-const { title = `${site.name} | Performance Marketing Agency in Dhaka`, description = site.description } = Astro.props;
-const path = Astro.url.pathname;
+const { title = `${site.name} | Performance Marketing Agency in Dhaka`, description = L('description') } = Astro.props;
+const path = switchPath(Astro.url.pathname, 'en');
+const enUrl = switchPath(Astro.url.pathname, 'en');
+const bnUrl = switchPath(Astro.url.pathname, 'bn');
+const siteUrl = (Astro.site?.href ?? '').replace(/\/$/, '');
+// Interface text that the site script (main.js) needs, e.g. form errors
+const jsText = lang === 'bn' ? Object.fromEntries(Object.entries(bnText as Record<string, string>).filter(([k]) => k.startsWith('js:')).map(([k, v]) => [k.slice(3), v])) : {};
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
@@ -22,12 +31,15 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : !href.include
 const logoPaths = `<path d="M254 437.5 190.5 437 239.5 278 251 270.5 304 271.5ZM95 437.5 33 437.5 32.5 435 79.5 281 87 273.5 94 270.5 145 271.5ZM174 437.5 110.5 437 160.5 272 209 270.5 218.5 276 220.5 286Z"/><path class="arrowpart" d="M333 438.5 269.5 438 320.5 271 279 243.5 274.5 236 322.5 87 322 84.5 304.5 79 372 26.5 394.5 106 381 102.5 376.5 105 343.5 211 385 242.5 389.5 249 389.5 254Z"/>`;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>{title}</title>
   <meta name="description" content={description}>
+  <link rel="alternate" hreflang="en" href={siteUrl + enUrl}>
+  <link rel="alternate" hreflang="bn" href={siteUrl + bnUrl}>
+  <link rel="alternate" hreflang="x-default" href={siteUrl + enUrl}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content="website">
@@ -36,7 +48,7 @@ const logoPaths = `<path d="M254 437.5 190.5 437 239.5 278 251 270.5 304 271.5ZM
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif&family=Hind+Siliguri:wght@400;500;600;700&display=swap">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -52,6 +64,10 @@ const logoPaths = `<path d="M254 437.5 190.5 437 239.5 278 251 270.5 304 271.5ZM
         {nav.map((n) => <li><a href={n.href} aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a></li>)}
       </ul>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <a hreflang="en" lang="en" href={enUrl} aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+      <a hreflang="bn" lang="bn" href={bnUrl} aria-current={lang === 'bn' ? 'true' : undefined}>বাং</a>
+    </div>
     <a class="btn btn-primary nav-cta" href="/contact">Let's talk <span class="arr">↗</span></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
   </div>
@@ -60,8 +76,12 @@ const logoPaths = `<path d="M254 437.5 190.5 437 239.5 278 251 270.5 304 271.5ZM
   <ul>
     {nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}
   </ul>
+  <div class="lang-switch lang-switch-m" role="group" aria-label="Language">
+    <a hreflang="en" lang="en" href={enUrl} aria-current={lang === 'en' ? 'true' : undefined}>English</a>
+    <a hreflang="bn" lang="bn" href={bnUrl} aria-current={lang === 'bn' ? 'true' : undefined}>বাংলা</a>
+  </div>
   <a class="btn btn-light" href="/contact">Let's talk <span class="arr">↗</span></a>
-  <div class="contact-mini"><span>{site.phone}</span><span>{site.email}</span><span>{site.addressShort}</span></div>
+  <div class="contact-mini"><span>{site.phone}</span><span>{site.email}</span><span>{L('address_short')}</span></div>
 </div>
 
 <main id="main">
@@ -73,7 +93,7 @@ const logoPaths = `<path d="M254 437.5 190.5 437 239.5 278 251 270.5 304 271.5ZM
     <div class="f-top">
       <div>
         <a class="brand" href="/" style="color:var(--ivory)"><svg viewBox="30 24 368 418" aria-hidden="true" set:html={logoPaths}></svg>ECOMMETRIX</a>
-        <p>{site.footer_text}</p>
+        <p>{L('footer_text')}</p>
         <SocialIcons />
       </div>
       <div class="f-col"><h4>Explore</h4><ul><li><a href="/services">Services</a></li><li><a href="/work">Our Work</a></li><li><a href="/#about">About Us</a></li><li><a href="/#team">Team</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
@@ -81,10 +101,10 @@ const logoPaths = `<path d="M254 437.5 190.5 437 239.5 278 251 270.5 304 271.5ZM
       <div class="f-col"><h4>Contact</h4><ul>
         <li><span>{site.phone}</span><button class="copy-btn" type="button" data-copy={`+${site.phoneRaw}`}>Copy</button></li>
         <li><span>{site.email}</span><button class="copy-btn" type="button" data-copy={site.email}>Copy</button></li>
-        <li>{site.addressShort}, Bangladesh</li>
+        <li>{L('address_short')}, Bangladesh</li>
       </ul></div>
     </div>
-    <div class="f-bottom"><span>© <span id="yr">2026</span> {site.name}. All rights reserved.</span><span>{site.tagline}</span></div>
+    <div class="f-bottom"><span>© <span id="yr">2026</span> {site.name}. All rights reserved.</span><span>{L('tagline')}</span></div>
   </div>
 </footer>
 
@@ -106,6 +126,7 @@ const logoPaths = `<path d="M254 437.5 190.5 437 239.5 278 251 270.5 304 271.5ZM
   </div>
 </div>
 
+<script is:inline define:vars={{ jsText }}>window.I18N = jsText;</script>
 <script is:inline src="/js/main.js" defer></script>
 </body>
 </html>

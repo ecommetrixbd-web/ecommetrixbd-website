@@ -60,16 +60,39 @@
   ],
   "stats": [
     {
-      "label": "Years in business"
+      "label": "Years in business",
+      "label_bn": "বছরের অভিজ্ঞতা"
     },
     {
-      "label": "Ad spend managed"
+      "label": "Ad spend managed",
+      "label_bn": "Ad spend ম্যানেজ করেছি"
     },
     {
-      "label": "Content pieces produced"
+      "label": "Content pieces produced",
+      "label_bn": "Content বানিয়েছি"
     },
     {
-      "label": "Brands served"
+      "label": "Brands served",
+      "label_bn": "ব্র্যান্ডের সাথে কাজ"
     }
-  ]
+  ],
+  "eyebrow_bn": "Performance marketing agency · ঢাকা",
+  "headline_line_1_bn": "আপনার ads চালাই,",
+  "headline_line_2_bn": "ভিডিও বানাই,",
+  "headline_line_3_bn": "প্রতিটা সেল ট্র্যাক করি।",
+  "intro_bn": "Campaign প্ল্যান, content শুট, পেজ বানানো আর tracking সেটআপ — সব আমরা করি। তাই আপনি দেখতে পারবেন কোন টাকাটা সেল এনেছে, আর কোনটা আনেনি।",
+  "button_1_text_bn": "ফ্রি audit নিন",
+  "button_2_text_bn": "আমাদের কাজ দেখুন",
+  "rotator_words_bn": [
+    "Meta Ads",
+    "Google Ads",
+    "TikTok Ads",
+    "Video Production",
+    "Website Design",
+    "Graphics Design",
+    "Email Marketing",
+    "Content Support",
+    "Server-Side Tracking"
+  ],
+  "hero_strip_bn": "Ads · ভিডিও · ওয়েবসাইট · Tracking"
 }

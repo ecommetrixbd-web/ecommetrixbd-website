@@ -2,31 +2,45 @@
   "items": [
     {
       "question": "What services does Ecommetrix provide?",
-      "answer": "Google Ads, Meta Ads, TikTok Ads, video and creative production, website design and development, graphics design, email marketing, content support, and server-side and conversion tracking."
+      "answer": "Google Ads, Meta Ads, TikTok Ads, video and creative production, website design and development, graphics design, email marketing, content support, and server-side and conversion tracking.",
+      "question_bn": "Ecommetrix কী কী সার্ভিস দেয়?",
+      "answer_bn": "Google Ads, Meta Ads, TikTok Ads, ভিডিও ও creative প্রোডাকশন, ওয়েবসাইট ডিজাইন ও ডেভেলপমেন্ট, গ্রাফিক্স ডিজাইন, email marketing, content সাপোর্ট, আর server-side ও conversion tracking।"
     },
     {
       "question": "Do you work with international businesses?",
-      "answer": "Yes. We are based in Dhaka and work with businesses in Bangladesh and abroad."
+      "answer": "Yes. We are based in Dhaka and work with businesses in Bangladesh and abroad.",
+      "question_bn": "দেশের বাইরের ব্যবসার সাথে কাজ করেন?",
+      "answer_bn": "হ্যাঁ। আমরা ঢাকায়, তবে বাংলাদেশ আর দেশের বাইরের — দুই জায়গার ব্যবসার সাথেই কাজ করি।"
     },
     {
       "question": "Can we hire individual services?",
-      "answer": "Yes. You can start with one service, such as Meta Ads or tracking, and add more when you need them."
+      "answer": "Yes. You can start with one service, such as Meta Ads or tracking, and add more when you need them.",
+      "question_bn": "একটা সার্ভিস আলাদাভাবে নেওয়া যায়?",
+      "answer_bn": "অবশ্যই। Meta Ads বা tracking-এর মতো একটা সার্ভিস দিয়ে শুরু করতে পারেন, পরে দরকার হলে আরও যোগ করবেন।"
     },
     {
       "question": "Do you provide video production?",
-      "answer": "Yes. Our team handles concept, script, shoot and edit, and delivers cuts for each ad placement."
+      "answer": "Yes. Our team handles concept, script, shoot and edit, and delivers cuts for each ad placement.",
+      "question_bn": "ভিডিও প্রোডাকশন করেন?",
+      "answer_bn": "হ্যাঁ। Concept, script, শুট আর এডিট — সব আমাদের টিম করে, আর প্রতিটা ad placement-এর জন্য আলাদা cut দেয়।"
     },
     {
       "question": "Do you provide server-side tracking?",
-      "answer": "Yes. We set up Meta Pixel with Conversions API, server-side Google Tag Manager, GA4 and ecommerce events, with deduplication."
+      "answer": "Yes. We set up Meta Pixel with Conversions API, server-side Google Tag Manager, GA4 and ecommerce events, with deduplication.",
+      "question_bn": "Server-side tracking সেটআপ করেন?",
+      "answer_bn": "হ্যাঁ। Meta Pixel + Conversions API, server-side Google Tag Manager, GA4 আর ecommerce event — deduplication সহ।"
     },
     {
       "question": "How does onboarding work?",
-      "answer": "We follow our four-step framework: a discovery call, a written strategy, launch, then ongoing optimization and reporting."
+      "answer": "We follow our four-step framework: a discovery call, a written strategy, launch, then ongoing optimization and reporting.",
+      "question_bn": "কাজ শুরু হয় কীভাবে?",
+      "answer_bn": "চার ধাপে: প্রথমে একটা discovery call, তারপর লিখিত strategy, এরপর launch, তারপর নিয়মিত optimization আর report।"
     },
     {
       "question": "How can we start working together?",
-      "answer": "Send us a message on WhatsApp or by email, or use the contact form. We will set up a short call to understand your goals."
+      "answer": "Send us a message on WhatsApp or by email, or use the contact form. We will set up a short call to understand your goals.",
+      "question_bn": "একসাথে কাজ শুরু করব কীভাবে?",
+      "answer_bn": "WhatsApp বা email-এ মেসেজ দিন, অথবা contact ফর্মটা পূরণ করুন। আপনার লক্ষ্য বুঝতে আমরা একটা ছোট কল সেট করব।"
     }
   ]
 }

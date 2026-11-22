@@ -9,8 +9,8 @@
   --ivory-2:#EDE6DB; --line:rgba(31,26,23,.14); --line-dark:rgba(245,240,232,.14);
   --panel:#1D0E12; --panel-2:#26131A;
   /* Type */
-  --display:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --display:'Manrope','Hind Siliguri',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Inter','Hind Siliguri',system-ui,-apple-system,'Segoe UI',sans-serif;
   --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
   /* Scale */
   --fs-hero:clamp(2.75rem,6.4vw,5.6rem);

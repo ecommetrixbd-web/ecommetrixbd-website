@@ -1,4 +1,7 @@
 ---
+import { getLang, pick } from '../i18n';
+const lang = getLang(Astro);
+const L = (o: any, k: string) => pick<any>(o, k, lang);
 import { getWork, workTabs } from '../data/work';
 import TrackIntro from './TrackIntro.astro';
 const { limit = 0, showHead = true } = Astro.props;
@@ -34,9 +37,9 @@ const work = await getWork();
                   {w.image ? <img src={w.image} alt="" loading="lazy" decoding="async" /> : <span class="ph">Add image</span>}
                 </div>
                 <div class="stack">{w.tags.map((tag) => <span>{tag}</span>)}</div>
-                <h3>{w.title}</h3>
-                <p>{w.summary}</p>
-                <a class="link" href={`/work/${w.slug}`}>Details <span class="arr">→</span><span class="sr">: {w.title}</span></a>
+                <h3>{L(w,"title")}</h3>
+                <p>{L(w,"summary")}</p>
+                <a class="link" href={`/work/${w.slug}`}>Details <span class="arr">→</span><span class="sr">: {L(w,"title")}</span></a>
               </article>
             ))}
           </div>

@@ -1,4 +1,7 @@
 ---
+import { getLang, pick } from '../i18n';
+const lang = getLang(Astro);
+const L = (o: any, k: string) => pick<any>(o, k, lang);
 import { videos } from '../data/site';
 const { full = false } = Astro.props;
 
@@ -34,21 +37,21 @@ const fmtLabel: Record<string, string> = { wide: '16:9', tall: '9:16', square: '
       </span>
       <span class="playbtn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
       <span class="meta">
-        <span><small>Featured showreel</small><h3>{reel.title}</h3></span>
+        <span><small>Featured showreel</small><h3>{L(reel,"title")}</h3></span>
         {!srcOf(reel) && <span class="ph">Add showreel video</span>}
       </span>
     </button>
 
     <div class={full ? 'vgrid full' : 'vgrid'}>
       {list.map((v, i) => (
-        <button class={`vcard ${v.format}`} type="button" data-video={v.title} data-cat={v.category} data-src={srcOf(v)} data-tall={v.format === 'tall' ? '1' : undefined}>
+        <button class={`vcard ${v.format}`} type="button" data-video={L(v,"title")} data-cat={L(v,"category")} data-src={srcOf(v)} data-tall={v.format === 'tall' ? '1' : undefined}>
           <span class="thumb">
             {thumbOf(v)
               ? <img src={thumbOf(v)} alt="" loading="lazy" decoding="async" />
               : <svg viewBox="0 0 160 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id={`vt${i}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#140709"/></linearGradient></defs><rect width="160" height="160" fill={`url(#vt${i})`}/><circle cx="120" cy="40" r="34" fill="#B8955A" opacity=".14"/></svg>}
             <span class="playbtn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
           </span>
-          <span class="cap"><h4>{v.title}{!srcOf(v) && <span class="ph">Add video</span>}</h4><span class="cat">{v.category || fmtLabel[v.format]}</span></span>
+          <span class="cap"><h4>{L(v,"title")}{!srcOf(v) && <span class="ph">Add video</span>}</h4><span class="cat">{L(v,"category") || fmtLabel[v.format]}</span></span>
         </button>
       ))}
     </div>

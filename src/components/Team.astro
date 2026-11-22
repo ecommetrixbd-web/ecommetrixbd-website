@@ -1,4 +1,7 @@
 ---
+import { getLang, pick } from '../i18n';
+const lang = getLang(Astro);
+const L = (o: any, k: string) => pick<any>(o, k, lang);
 import { team } from '../data/site';
 const initials = (n: string) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
 ---
@@ -20,7 +23,7 @@ const initials = (n: string) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((
               : <><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo placeholder"><defs><radialGradient id={`pg${i}`} cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#5C1423"/><stop offset="1" stop-color="#1F0B10"/></radialGradient></defs><rect width="400" height="500" fill={`url(#pg${i})`}/><circle cx="200" cy="185" r="78" fill="#F5F0E8" fill-opacity=".07"/><path d="M60 500c8-104 66-160 140-160s132 56 140 160z" fill="#F5F0E8" fill-opacity=".07"/><text x="200" y="205" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="58" fill="#B8955A">{initials(m.name)}</text></svg><span class="ph">Add photo</span></>}
             <span class="line"></span>
           </div>
-          <figcaption><div><h3>{m.name}</h3><span class="role">{m.role}</span></div>{m.linkedin && <a class="in" href={m.linkedin} target="_blank" rel="noopener" aria-label={`${m.name} on LinkedIn`}>in</a>}</figcaption>
+          <figcaption><div><h3>{m.name}</h3><span class="role">{L(m,"role")}</span></div>{m.linkedin && <a class="in" href={m.linkedin} target="_blank" rel="noopener" aria-label={`${m.name} on LinkedIn`}>in</a>}</figcaption>
         </figure>
       ))}
     </div>
